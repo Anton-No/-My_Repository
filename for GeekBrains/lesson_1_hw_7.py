@@ -13,7 +13,7 @@
 a = int( input( "Значение км в первый день, "))
 b = int( input( "Требуемый результат в км, "))
 count = 0
-while a <= b*1.1:
+while a <= b * 1.1:
     print("%.2f" % a)
     a = a * 1.1
     count = count + 1
