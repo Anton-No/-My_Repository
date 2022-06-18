@@ -17,3 +17,23 @@
 #“количество”: [5, 2, 7],
 #“ед”: [“шт.”]
 #}
+i = 1
+goods = []
+num = int(input('количество товара для внесения?'))
+for _ in range (num):
+    name = input( "название товара: ")
+    price = int(input( "цена товара: "))
+    quantity = int(input( "количество товара: "))
+    units = input( "ед измерения товара: ")
+    goods.append((i, {'название': name, "цена": price, 'количество': quantity, 'ед_измерения': units}))
+    
+    i +=1
+print(goods)
+goods_dict = {"название": [],"цена": [], 'количество': [], 'ед_измерения': []}
+for good in goods:
+    goods_dict['название'].append(good[1]['название'])
+    goods_dict['цена'].append(good[1]['цена'])
+    goods_dict['количество'].append(good[1]['количество'])
+    if good[1]['ед_измерения'] not in goods_dict['ед_измерения']:
+        goods_dict['ед_измерения'] .append(good[1]['ед_измерения'])
+print(goods_dict)
