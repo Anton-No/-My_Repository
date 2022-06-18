@@ -5,3 +5,16 @@
 #Пользователь ввёл число 8. Результат: 8, 7, 5, 3, 3, 2.
 #Пользователь ввёл число 1. Результат: 7, 5, 3, 3, 2, 1.
 #Набор натуральных чисел можно задать сразу в коде, например, my_list = [7, 5, 3, 3, 2].
+
+my_list = [7, 5, 3, 3, 2]
+for _ in range(5):
+    i = int(input("Введите рейтинг: "))
+    flag = False
+    for a in range(len(my_list)):
+        if my_list[a] < i:
+            my_list.insert(a, i)
+            flag = True
+            break
+    if not flag:
+        my_list.append(i)
+    print(*my_list)
