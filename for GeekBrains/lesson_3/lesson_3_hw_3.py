@@ -9,4 +9,4 @@ def my_func(a, b, c):
         return 'Введите цифры'
     
     
-print(my_func(10, 10, 2))
+print(my_func(11, 5, 2))
