@@ -13,7 +13,7 @@ from itertools import cycle
 
 j = 1
 for a in cycle(input()):
-    print(i)
+    print(a)
     j += 1
     if j > 10:
         break
