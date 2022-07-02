@@ -11,3 +11,21 @@
 #[{"firm_1": 5000, "firm_2": 3000, "firm_3": 1000}, {"average_profit": 2000}]
 #Подсказка: использовать менеджер контекста.
 
+
+
+import json
+
+res = dict()
+ave_profit = 0
+num = 0
+with open('/Users/an/Documents/My_Repository/for GeekBrains/lesson_5/text_7.txt', encoding='utf-8') as f:
+    for line in f:
+        name, type, income, cost = line.split()
+        profit = int(income) - int(cost)
+        if profit >= 0:
+            ave_profit += profit
+            num +=1
+        res[name] = profit
+ave_profit /= num
+with open("jsone7.json", "w", encoding="utf-8") as f:
+    json.dump([res, {"ave_profit": ave_profit}], f, ensure_ascii=False)
