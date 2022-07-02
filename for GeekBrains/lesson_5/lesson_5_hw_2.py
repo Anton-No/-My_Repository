@@ -2,7 +2,7 @@
 
 
 
-with open('text.txt', 'r', encoding='utf-8') as f:
+with open('/Users/an/Documents/My_Repository/for GeekBrains/lesson_5/text_2.txt', 'r', encoding='utf-8') as f:
       my_line = f.readlines()
       for index, value in enumerate(my_line, 1):
             number_of_words = len(value.split())
