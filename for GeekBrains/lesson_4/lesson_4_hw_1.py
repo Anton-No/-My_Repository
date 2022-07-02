@@ -11,4 +11,4 @@ def salary():
         print("Enter all 3 number.")
         
 
-salary(20, 5000, 1000)
+salary()
