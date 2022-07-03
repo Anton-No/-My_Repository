@@ -1,10 +1,30 @@
-#2. Реализовать класс Road (дорога).
+#3. Реализовать базовый класс Worker (работник).
 
-#    определить атрибуты: length (длина), width (ширина);
-#    значения атрибутов должны передаваться при создании экземпляра класса;
-#    атрибуты сделать защищёнными;
-#    определить метод расчёта массы асфальта, необходимого для покрытия всей дороги;
-#    использовать формулу: длина*ширина*масса асфальта для покрытия одного кв. метра дороги асфальтом, толщиной в 1 см*число см толщины полотна;
-#    проверить работу метода.
+#    определить атрибуты: name, surname, position (должность), income (доход);
+#    последний атрибут должен быть защищённым и ссылаться на словарь, содержащий элементы: оклад и премия, например, {"wage": wage, "bonus": bonus};
+#    создать класс Position (должность) на базе класса Worker;
+#    в классе Position реализовать методы получения полного имени сотрудника (get_full_name) и дохода с учётом премии (get_total_income);
+#    проверить работу примера на реальных данных: создать экземпляры класса Position, передать данные, проверить значения атрибутов, вызвать методы экземпляров.
 
-#Например: 20 м*5000 м*25 кг*5 см = 12500 т.
+
+
+class Worker:
+    def __init__(self, name, surname, position, wage, bonus):
+        self.name = name
+        self.surname = surname
+        self.position = position
+        self._income = {"profit": wage, "bonus": bonus}
+
+
+class Position(Worker):
+            def get_full_name(self):
+                return f"{self.name} {self.surname}"
+            
+            def get_full_income(self):
+                return f"{sum(self._income.values())}"
+
+
+manager = Position('Ivanov', 'Petrov', "Genral Director", 10000, 5000)
+print(manager.get_full_name())
+print(manager.position)
+print(manager.get_full_income())                 
