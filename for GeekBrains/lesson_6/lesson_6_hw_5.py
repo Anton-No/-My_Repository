@@ -14,21 +14,17 @@ class Stationery:
     def draw(self):
         print(f"start drawing {self.title}")
 
-
 class Pen(Stationery):
     def draw(self):
         print(f"drawing with {self.title} pen")
-
 
 class Pencil(Stationery):
     def draw(self):
         print(f"drawing with {self.title} pencile")
 
-
 class Marker(Stationery):
     def draw(self):
         print(f"drawing with {self.title} marker")
-
 
 stat = Stationery()
 stat.draw()
