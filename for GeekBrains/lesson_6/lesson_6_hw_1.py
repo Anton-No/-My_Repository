@@ -8,3 +8,23 @@
 #    проверить работу примера, создав экземпляр и вызвав описанный метод.
 #Задачу можно усложнить, реализовав проверку порядка режимов. При его нарушении выводить соответствующее сообщение и завершать скрипт.
 
+
+
+import time
+
+class TrafficLight:
+    
+    def running(self):
+        while True:
+            self.__color = "red"
+            print(f"{self.__color}")
+            time.sleep(7)
+            self.__color = "yellow"
+            print(f"{self.__color}")
+            time.sleep(2)
+            self.__color = "green"
+            print(f"{self.__color}")
+            time.sleep(7)
+
+TrafficLight = TrafficLight()
+TrafficLight.running()
