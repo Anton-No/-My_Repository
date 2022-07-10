@@ -9,16 +9,81 @@
 
 
 
-from turtle import color, speed
-from unicodedata import name
-from setuptools import find_packages
-
-
 class Car:
-    police = False
+    "Автомобиль"
     
-    def = __init__(self, name, color, speed):
+    is_police = False
+    
+    def __init__(self, name, color, speed):
         self.name = name
         self.color = color
         self.speed = speed
-        print(f"New car: {self.name} (color {self.color}), police car - ")
+        print(f"New car: {self.name} (color {self.color}), police car")
+
+    def go(self, speed=30):
+        self.speed = speed
+        print(f'{self.name}: машина поехала')
+        
+    def stop(self):
+        self.speed = 0
+        print(f'{self.name}: машина остановилась')
+        
+    def turn(self, direction):
+        print(f'{self.name}: машина повернула: {"налево" if direction == 0 else "направо"}')
+        
+    def show_speed(self):
+        return f'{self.name}: скорость автомобиля: {self.speed}'
+        
+class TownCar(Car):
+        "Городской автомобиль"
+    
+        def show_speed(self):
+            return f'{self.name}: Скорость автомобиля: {self.speed}. Превышение скорости'\
+                if self.speed > 60 else f'{self.name}: Скорость автомобиля: {self.speed}'
+
+
+class WorkCar(Car):
+        "Грузовой автомобиль"
+        
+        def show_speed(self):
+            return f'{self.name}: Скорость автомоблия: {self.speed}. Превышение скорости'\
+                if self.speed > 40 else f'{self.name}: Скорость автомобиля: {self.speed}'
+            
+class SportCar(Car):
+    "Спортивный автомобиль"
+    
+class PoliceCar(Car):
+    "Полицейский автомобиль"
+    is_police = True
+    
+police_car = PoliceCar("жигули", "белый", 80)
+police_car.go()
+print(police_car.show_speed())
+police_car.turn(0)
+police_car.stop()
+print()
+
+work_car = WorkCar('автобус', 'красный', 40)
+work_car.go()
+work_car.turn(1)
+print(work_car.show_speed())
+work_car.turn(0)
+work_car.stop()
+
+print()
+sport_car = SportCar('порш', "желтый", "120")
+sport_car.go()
+sport_car.turn(0)
+print(sport_car.show_speed())
+sport_car.stop()
+print()
+
+town_car = TownCar('лада', 'зеленый', 50)
+town_car.go()
+town_car.turn(1)
+town_car.turn(0)
+print(town_car.show_speed())
+town_car.stop()
+
+print(f'\nМашина {town_car.name} (цвет {town_car.color})')
+print(f'Машина {police_car.name} (цвет {police_car.color})')
