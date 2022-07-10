@@ -7,3 +7,37 @@
 
 
 
+class Stationery:
+    def __init__(self, title="drawing"):
+        self.title = title
+        
+    def draw(self):
+        print(f"start drawing {self.title}")
+
+
+class Pen(Stationery):
+    def draw(self):
+        print(f"drawing with {self.title} pen")
+
+
+class Pencil(Stationery):
+    def draw(self):
+        print(f"drawing with {self.title} pencile")
+
+
+class Marker(Stationery):
+    def draw(self):
+        print(f"drawing with {self.title} marker")
+
+
+stat = Stationery()
+stat.draw()
+
+pen = Pen("Pen_1")
+pen.draw()
+
+pencil = Pencil("Pencil_1")
+pencil.draw()
+
+marker = Marker("Marker_1")
+marker.draw()

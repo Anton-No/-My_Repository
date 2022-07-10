@@ -9,3 +9,16 @@
 
 
 
+from turtle import color, speed
+from unicodedata import name
+from setuptools import find_packages
+
+
+class Car:
+    police = False
+    
+    def = __init__(self, name, color, speed):
+        self.name = name
+        self.color = color
+        self.speed = speed
+        print(f"New car: {self.name} (color {self.color}), police car - ")
